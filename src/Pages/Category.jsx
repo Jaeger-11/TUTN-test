@@ -2,6 +2,9 @@ import { useParams , Link} from 'react-router-dom'
 import minus from '../Assets/Home-Images/minus.png';
 import plus from '../Assets/Home-Images/plus.png';
 import { useState } from 'react';
+import { useGlobalContext } from '../Content-Manager/Context';
+import Modal from '../Components/ModalVote';
+import thumbs from '../Assets/Home-Images/thumbsup.png'
 
 const techies = [
     {
@@ -40,6 +43,7 @@ const techies = [
 
 const Cate = ({name, votes}) => {
     const [ vote, setVote ] = useState(1);
+    const { modal, setModal } = useGlobalContext();
 
     const handleMinus = () => {
         if(vote > 1){
@@ -54,6 +58,7 @@ const Cate = ({name, votes}) => {
         //     techie.name === name
         //     return( {...techies, votes: votes + vote  } )
         // })
+        setModal(true);
         votes = votes + vote
         setVote(1);
     }
@@ -77,7 +82,7 @@ const Cate = ({name, votes}) => {
 
 const Category =() => {
     let params = useParams();
-
+    const { modal } = useGlobalContext();
 
     return(
         <div className='category'>
@@ -95,7 +100,13 @@ const Category =() => {
                     return <Cate {...techie} />
                 })}
             </section>
-            
+            {modal && <Modal  
+            image={thumbs} 
+            title={'Awesome!'}
+            text={'Thank you for taking the time to vote. We are commited to promoting technology in Africa'}
+            button={'Return to voting page'} 
+            to={'/categories'}
+            />}
         </div>
     )
 }

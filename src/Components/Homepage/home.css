@@ -28,9 +28,13 @@
     border: 1px var(--fade) solid;
 }
 .home-target{
-    background-color: var(--primary);
+    background-size: 20%;
+    background-color: var(--bg);
+    background-image: url('../../Assets/Background-Images/screwbigup.png'),url('../../Assets/Background-Images/screwbigdown.png'), url('../../Assets/Background-Images/screwsmalldown.png'), url('../../Assets/Background-Images/screwsmallup.png');
+    background-position: left top, right bottom, 10% 90%,  90% 10%;
+    background-repeat: no-repeat;
     color: white;
-    padding: 1rem 1rem 3rem 1rem;
+    padding: 3rem 1rem;
     text-align: center;
 }
 .home-target h2{
@@ -109,9 +113,12 @@
     font-weight: 300;
 }
 footer{
-    background-color: var(--primary);
+    background-color: var(--bg);
     color: white;
     padding: 1rem;
+    background-image: url('../../Assets/Background-Images/screwbigup.png'),url('../../Assets/Background-Images/screwbigdown.png'), url('../../Assets/Background-Images/screwsmalldown.png'), url('../../Assets/Background-Images/screwsmallup.png');
+    background-position: left top, 90% 10%, 10% 90%,  90% 10%;
+    background-repeat: no-repeat;
 }
 footer li{
     list-style: none;
@@ -169,6 +176,9 @@ footer ul :first-child{
         display: flex;
         justify-content: space-around;
         margin-bottom: 3rem;
+    }
+    .home-target{
+        background-size: inherit;
     }
 }
 
@@ -624,4 +634,123 @@ footer ul :first-child{
     font-size: 16px;
     line-height: 19px;
     margin-left: 2rem;
+}
+
+/* STYLING OF DONATION PAGE */
+
+.donate-container{
+    padding: 1rem;
+}
+.donate ul{
+    padding: 1rem;
+}
+.donate li{
+    margin: 1rem 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+}
+.donate form{
+    margin: 1rem 0;
+    width: 100%;
+}
+.donate form div{
+    display: flex;
+    margin: 1rem 0;
+}
+.donate form div p{
+    width: max-content;
+    padding: 1.5rem 2rem;
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+}
+.donate input{
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.donate input::placeholder{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+}
+.donate section p{
+    margin-top: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+}
+.donate label{
+    font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+}
+.donate button{
+    width: 100%;
+    margin: auto;
+    padding: 1rem 0;
+    font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+}
+
+@media screen and (min-width: 550px) {
+    .donate{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+/* STYLING OF MODAL COMPONENT */
+.modal-container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(24, 24, 24, 0.5);
+}
+.modal{
+    gap: 1.5rem;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 2rem;
+}
+.modal .times{
+    width: 100%;
+    text-align: right !important;
+}
+.modal .title{
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    letter-spacing: -0.04em;
+}
+.modal button{
+    width: 100%;
+    padding: 1rem;
+}
+
+@media screen and (min-width: 500px) {
+    .modal{
+        width: 300px;
+    }
 }

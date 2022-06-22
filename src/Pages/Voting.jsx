@@ -1,3 +1,6 @@
+import { useGlobalContext } from "../Content-Manager/Context";
+import Modal from "../Components/ModalVote";
+import rocket from '../Assets/Home-Images/rocket.png';
 
 
 const Voting = () => {
@@ -25,11 +28,17 @@ const Voting = () => {
         },
     ]
 
+    const { modal, setModal } = useGlobalContext();
+
+    const handleBuy = () => {
+        setModal(true)
+    }
+
     return(
         <div className="voting-container">
             <div className="voting">
             <header>
-                <h2>Increase Your Voting Power</h2>
+                <h2>Increase Your voting Power Here</h2>
                 <p>Cheer Your Favourite Nominee to Success</p>
             </header>
 
@@ -39,18 +48,23 @@ const Voting = () => {
 
                     return(
                         <article className= {classname} >
-                            {/* <article>
-
-                            </article> */}
                             <div>
                             <h3>{votes}</h3>
                             <h6>Votes</h6>
                             </div>
                             <section>
                             <h2>${cost}</h2>
-                            <button className="voting-btn">Buy</button>
+                            <button className="voting-btn" onClick={handleBuy} >Buy</button>
                             </section>
                             
+                            {modal && <Modal  
+                            image={rocket} 
+                            title={'Awesome!'}
+                            text={'You have successfully Increased your voting power. Go and make your favorite candidate win!'}
+                            button={'Go to voting page'} 
+                            to={'/categories'}
+                            />}
+
                         </article>
                     )
                 })}

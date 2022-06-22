@@ -18,17 +18,16 @@ import ribbon from '../../Assets/Home-Images/ribbon.png';
 import star from '../../Assets/Home-Images/star.png';
 import stars from '../../Assets/Home-Images/3stars.png';
 import footerlogo from '../../Assets/Home-Images/footer-logo.png';
+import search from '../../Assets/Home-Images/search.png';
 
 const Home = () => {
     let navigate = useNavigate();
     return (
         <div className='home'>
             <header style={{margin:'3rem 0'}}>
-                <h1>
-                    First Ever Tech Personality Award For Africans in Europe
-                </h1>
+                <h1>First Ever Tech Personality Award For Africans in Europe</h1>
                 <form style={{margin:'1rem 0'}}>
-                    <input type="text" name="" id="" placeholder="Nominee's Name"/>
+                    <span> <img src={search} alt="search" className='search' /> <input type="text" name="" id="" placeholder="Nominee's Name"/></span>
                     <button>Search</button>
                 </form>
                 <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'5px'}} onClick={() => navigate('categories')} >

@@ -1,11 +1,10 @@
-
 nav{
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     align-items: center;
-    border-bottom: 1px solid black;
-    padding: 10px 0;
+    border-bottom: 1px solid var(--fade);
+    padding: 0.5rem 1rem;
 }
 .nav-logo{
     margin-left: 10px;
@@ -21,18 +20,56 @@ nav{
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    text-align: right;
     text-decoration: none;
 }
 .login{
-    background-color: var(--fade);
-    color: var(--primary);
+    background-color: #EEE8F2;
+    color: var(--black);
+}
+.nav-user{
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0 1rem ;
+}
+.nav-user p {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
+.nav-out-p{
+    position: absolute;
+    border-top: 1px var(--fade);
+    bottom: -8.7rem;
+    background-color: var(--primary);
+    width: 100%;
+}
+.nav-out-p p{
+    padding:  1rem;
+    cursor: pointer;
+    margin: 2rem 0;
+    color: white;
+    border: 1px  solid #674182;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+nav button{
+    padding: 0.7rem 1rem;
 }
 
-@media screen and (min-width: 480px) {
+
+@media screen and (min-width: 600px) {
     .nav-links{
         display: flex;
         gap: 0.5rem;
+    }
+    .nav-link{
+        font-size: 14px;
     }
     .nav-btns{
         display: flex;
@@ -46,22 +83,29 @@ nav{
 @media screen and (min-width: 800px) {
     .nav-links, .nav-btns{
         gap: 1rem;
+        font-size: 16px;
+    }
+}
+@media screen and (min-width: 900px) {
+    .nav-links, .nav-btns{
+        gap: 2rem;
+        font-size: 16px;
     }
 }
 
 @media screen and (min-width: 1100px) {
     nav{
-        padding:0 1rem;
+        padding:0.5rem 1rem;
     }
     .nav-links, .nav-btns{
-        gap: 2rem;
+        gap: 3rem;
     }
 }
 
 
 /* STYLING OF MENU COMPONENT */
 .menu{
-    position: fixed;
+    position: absolute;
     top: 80px;
     width: 100%;
     z-index: 3;
@@ -78,6 +122,7 @@ nav{
 .menu li{
     list-style: none;
     width: 100%;
-    padding: 1rem;
-    border-bottom: 1px black solid;
+    padding: 1.5rem;
+    border-bottom: 1px var(--fade) solid;
+    box-shadow: 0px 1px 0px rgba(243, 240, 240, 0.5)
 }
