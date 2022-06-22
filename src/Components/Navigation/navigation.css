@@ -1,0 +1,83 @@
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+}
+.nav-logo{
+    margin-left: 10px;
+}
+.nav-icon{
+    margin-right: 10px;
+}
+.nav-links, .nav-btns{
+    display: none;
+}
+.nav-link{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    text-decoration: none;
+}
+.login{
+    background-color: var(--fade);
+    color: var(--primary);
+}
+
+@media screen and (min-width: 480px) {
+    .nav-links{
+        display: flex;
+        gap: 0.5rem;
+    }
+    .nav-btns{
+        display: flex;
+        gap: 0.5rem;
+    }
+    .nav-icon{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav-links, .nav-btns{
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    nav{
+        padding:0 1rem;
+    }
+    .nav-links, .nav-btns{
+        gap: 2rem;
+    }
+}
+
+
+/* STYLING OF MENU COMPONENT */
+.menu{
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    z-index: 3;
+    background-color: white;
+    height: 100%;
+}
+.menu-link{
+    text-decoration: none;
+    color: black;
+}
+.menu ul{
+    display: block;
+}
+.menu li{
+    list-style: none;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px black solid;
+}

@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/Navigation/Navbar';
+import Home from './Components/Homepage/Home';
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import About from './Components/AboutPage/About';
+import Donation from './Components/DonationPage/Donation';
+import Future from './Pages/Future';
+import Past from './Pages/Past';
+import Categories from './Pages/Categories';
+import Category from './Pages/Category';
+import Create from './Pages/Create';
+import Sign from './Pages/Sign';
+import Voting from './Pages/Voting';
+import Nominate from './Pages/Nominate';
 
 function App() {
+  // let  { pathname } = useLocation();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='about' element={<About/>}/>
+        <Route path='donate' element={<Donation/>} />
+        <Route path='future' element={<Future/>} />
+        <Route path='past' element={<Past/>} />
+        <Route path='categories' element={<Categories/>} />
+        <Route path='categories/:category' element={<Category/>}/>
+        <Route path='create' element={<Create/>} />
+        <Route path='sign' element={<Sign/>} /> 
+        <Route path='voting' element={<Voting/>}/>
+        <Route path='nominate' element={<Nominate/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
