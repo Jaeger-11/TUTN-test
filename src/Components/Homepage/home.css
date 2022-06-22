@@ -273,7 +273,7 @@ footer ul :first-child{
     margin-right: 0.5rem;
 }
 .categories{
-    padding: 2rem;
+    padding: 2rem 1rem;
 }
 .categories h2{
     font-weight: 600;
