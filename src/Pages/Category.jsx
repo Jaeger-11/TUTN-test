@@ -93,7 +93,7 @@ const Category =() => {
                 <button>Search</button>
             </form>
             <p>You have <span>70</span> votes left</p>
-            <Link to='/voting'><p>Increase your voting power</p></Link>
+            <Link to='/voting' style={{textDecoration:'none'}} ><p>Increase your voting power Here!</p></Link>
             </header>
             <section className='category-section'>
                 {techies.map((techie) => {

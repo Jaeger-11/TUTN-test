@@ -1,3 +1,5 @@
+
+
 .home h1{
     margin-top: 1rem;
     font-size: 64px;
@@ -350,6 +352,7 @@ footer ul :first-child{
     font-weight: 400;
     font-size: 48px;
     line-height: 58px;
+    font-family: 'Nova Square', sans-serif;
 }
 .voting-section article h3{
     font-style: normal;
@@ -365,10 +368,10 @@ footer ul :first-child{
     line-height: 22px;
 }
 .voting-btn{
-    padding: 0.5rem 0;
+    padding: 0.8rem 0;
     width: 126px;
     background-color: white !important;
-    color: var(--black);
+    color: var(--primary);
 }
 
 @media screen and (min-width: 1000px) {
@@ -485,6 +488,7 @@ footer ul :first-child{
     font-size: 16px;
     line-height: 19px;
     text-align: center;
+    text-decoration: none;
 }
 
 /* STYLING OF SIGN IN PAGE */
@@ -699,12 +703,19 @@ line-height: 19px;
 font-size: 16px;
 line-height: 19px;
 }
+.donate img{
+    width: 100%;
+}
 
 @media screen and (min-width: 550px) {
     .donate{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        gap: 2rem;
+    }
+    .donate img{
+        width: 80%;
+        margin: auto;
     }
 }
 

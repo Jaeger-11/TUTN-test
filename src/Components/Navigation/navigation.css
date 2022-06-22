@@ -21,6 +21,7 @@ nav{
     font-size: 16px;
     line-height: 19px;
     text-decoration: none;
+    color: var(--primary);
 }
 .login{
     background-color: #EEE8F2;

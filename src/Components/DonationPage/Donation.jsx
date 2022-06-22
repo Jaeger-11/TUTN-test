@@ -13,7 +13,7 @@ const Donation = () => {
                 </header>
                 <div className='donate'>
                 <article>
-                <p style={{width:'100%'}}><img src={classroom} alt="notebook" style={{width: 'inherit'}} /></p>
+                <p style={{width:'100%'}}><img src={classroom} alt="notebook" /></p>
                 <form >
                     <p> <label htmlFor="donate">Enter Donation Amount</label> </p>
                     <div> <p>$</p> <input type="number" name="" id="donate" min={5} placeholder='5' /></div>

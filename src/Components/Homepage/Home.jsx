@@ -125,7 +125,7 @@ const Home = () => {
                 <article>
                     <p><img src={stars} alt="stars" /></p>
                     <h4>Exceptional Talent</h4>
-                    <p>ExceptionalTalent is an individual with less than 5 years experience in Nigeria technology ecosystem. Such individual are well recognized in their field for impacting with their skills.</p>
+                    <p>Exceptional Talent is an individual with less than 5 years experience in Nigeria technology ecosystem. Such individual are well recognized in their field for impacting with their skills.</p>
                 </article>
             </section>
 
