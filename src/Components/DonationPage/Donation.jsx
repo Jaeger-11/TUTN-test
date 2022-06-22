@@ -1,5 +1,4 @@
 
-import notebook from '../../Assets/Home-Images/notebook.png';
 import classroom from '../../Assets/Home-Images/classroom.png';
 
 const Donation = () => {

@@ -31,7 +31,6 @@ const Navbar = () => {
     return(
         <nav>
             <Link to='/'><img src={logo} alt="logo" className='nav-logo'/></Link>  
-            { menu ? <img src={times} alt="times"  onClick={toggleMenu} className='nav-icon' /> : <img src={hamburger} alt="hamburger" onClick={toggleMenu} className='nav-icon' /> }
             
             <section className='nav-links'>
                 <Link to ='/categories' className='nav-link'>Categories</Link>
@@ -51,9 +50,11 @@ const Navbar = () => {
                 <section className='nav-btns'>
                 <Link to='sign'><button className='login'>Log In</button></Link>
                 <Link to='create'><button>Create Account</button></Link>
-            </section>
+                </section>
             }
-            {menu && <Menu setMenu={setMenu}/> }
+            { menu ? <img src={times} alt="times"  onClick={toggleMenu} className='nav-icon' /> : <img src={hamburger} alt="hamburger" onClick={toggleMenu} className='nav-icon' /> }
+
+            {menu && <Menu setMenu={setMenu} log={log} setLog={setLog} /> }
         </nav>
     )
 }

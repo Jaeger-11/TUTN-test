@@ -1,6 +1,5 @@
 
 import persons from '../../Assets/Home-Images/persons.png';
-import group2 from '../../Assets/Home-Images/group2.png';
 import group from '../../Assets/Home-Images/group-photo.png';
 
 const About = ()=> {
@@ -15,12 +14,11 @@ const About = ()=> {
             <section className='about-section'>
                 <article>
                     <h2>Connecting Techies Globally</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae rerum ut odio facilis placeat aliquid optio quis, similique quibusdam. Voluptatum magni at delectus officia commodi libero, nostrum aspernatur? Nesciunt, molestiae.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nesciunt praesentium aspernatur iusto accusantium facilis, dolores, cupiditate vitae neque voluptas adipisci id quo porro veritatis totam, nobis nostrum doloribus alias.
+                    <p style={{marginTop:'1.5rem'}}>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
                 </article>
-                <p style={{width:'100%'}}><img src={group} alt='group-photo' style={{width:'inherit'}} /></p>
+                <p style={{width:'100%'}}><img src={group} alt='group' style={{width:'inherit'}} /></p>
             </section>
         </div>
     )

@@ -4,7 +4,8 @@ import plus from '../Assets/Home-Images/plus.png';
 import { useState } from 'react';
 import { useGlobalContext } from '../Content-Manager/Context';
 import Modal from '../Components/ModalVote';
-import thumbs from '../Assets/Home-Images/thumbsup.png'
+import thumbs from '../Assets/Home-Images/thumbsup.png';
+import search from '../Assets/Home-Images/search.png'
 
 const techies = [
     {
@@ -43,7 +44,7 @@ const techies = [
 
 const Cate = ({name, votes}) => {
     const [ vote, setVote ] = useState(1);
-    const { modal, setModal } = useGlobalContext();
+    const { setModal } = useGlobalContext();
 
     const handleMinus = () => {
         if(vote > 1){
@@ -88,8 +89,8 @@ const Category =() => {
         <div className='category'>
             <header> 
                 <h2>{params.category}</h2> 
-                <form>
-                <input type="text" name="" id="" placeholder="Nominee's Name, Nominee's Category"/>
+                <form onSubmit={(e) => e.preventDefault()}>
+                <span> <img src={search} alt="search" className='search' /> <input type="text" name="" id="" placeholder="Nominee's Name, Nominee's Category"/></span>
                 <button>Search</button>
             </form>
             <p>You have <span>70</span> votes left</p>

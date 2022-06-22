@@ -14,7 +14,6 @@ import Voting from './Pages/Voting';
 import Nominate from './Pages/Nominate';
 
 function App() {
-  // let  { pathname } = useLocation();
   return (
     <BrowserRouter>
       <Navbar/>

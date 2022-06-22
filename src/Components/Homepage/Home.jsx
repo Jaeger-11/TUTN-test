@@ -26,7 +26,7 @@ const Home = () => {
         <div className='home'>
             <header style={{margin:'3rem 0'}}>
                 <h1>First Ever Tech Personality Award For Africans in Europe</h1>
-                <form style={{margin:'1rem 0'}}>
+                <form style={{margin:'1rem 0'}} onSubmit={(e) => e.preventDefault()}>
                     <span> <img src={search} alt="search" className='search' /> <input type="text" name="" id="" placeholder="Nominee's Name"/></span>
                     <button>Search</button>
                 </form>
@@ -75,7 +75,7 @@ const Home = () => {
                     of a page when looking at its layout. The point of 
                     using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
                     </p>
-                    <p><button>Learn More</button></p>
+                    <p><button onClick={() => navigate('/about')}>Learn More</button></p>
                 </article>
                 <p style={{textAlign: 'right'}} ><img src={vectorright} alt='vector' className='home-rainbow'/></p>
                 </section>
@@ -104,7 +104,7 @@ const Home = () => {
                         of a page when looking at its layout. The point of 
                         using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
                         </p>
-                        <p><button>Read More</button></p>
+                        <p><button  onClick={() => navigate('/past')}>Read More</button></p>
                         
                     </article>
                     <img src={vectorleft} alt='vector' className='home-rainbow'/>

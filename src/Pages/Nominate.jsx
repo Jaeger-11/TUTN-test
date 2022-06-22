@@ -2,8 +2,17 @@ import twitter from '../Assets/Home-Images/twitter.png'
 import instagram from '../Assets/Home-Images/instagram.png'
 import linkedin from '../Assets/Home-Images/linkedin.png'
 import facebook from '../Assets/Home-Images/facebook.png'
+import Modal from '../Components/ModalVote'
+import { useGlobalContext } from '../Content-Manager/Context'
+import thumbs from '../Assets/Home-Images/thumbsup.png';
+
 
 const Nominate = () => {
+    const { modal, setModal } = useGlobalContext();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setModal(true)
+    }
 
     return(
         <div className='sign-container'>
@@ -13,7 +22,7 @@ const Nominate = () => {
                     <h2>Nominate a candidate for The Connected Award</h2>
                     <p>Enter The Nominee's Information Below</p>
                 </header>
-                <form>
+                <form onSubmit={handleSubmit} >
                     <p>
                         <label htmlFor="category">Award Category</label> <br />
                         <select id="category" name="award" >
@@ -55,11 +64,17 @@ const Nominate = () => {
                         <label htmlFor="facebook" className='nominate-label'> <img src={facebook} alt="facebook" /> facebook </label>
                         <input type="text" id='facebook' className='nominate-icons' />
                     </p>
-                </form>
-
-                <p className='forgot'>The First-Ever Tech Personality Awards Recognizing Promising and Exceptional African Talents in all Technological Fields. The West African Countries include 16 countries of Benin, Burkina Faso, Gambia, Ghana, Guinea, Guinea-Bissau, Ivory Coast, Liberia, Mali, Mauritania, Niger, Nigeria, Senegal, Sierra Leone, and Togo
+                    <p className='forgot'>The First-Ever Tech Personality Awards Recognizing Promising and Exceptional African Talents in all Technological Fields. The West African Countries include 16 countries of Benin, Burkina Faso, Gambia, Ghana, Guinea, Guinea-Bissau, Ivory Coast, Liberia, Mali, Mauritania, Niger, Nigeria, Senegal, Sierra Leone, and Togo
                   <br/>  For questions, partnerships & enquiries, send us a mail via connectedawards@gmail.com</p>
-                  <button>Submit</button>
+                  <button >Submit</button>
+                </form>
+                {modal && <Modal  
+            image={thumbs} 
+            title={'Awesome!'}
+            text={'Your Nomination has been submitted'}
+            button={'Return to home page'} 
+            to={'/'}
+            />}
             </section>
         </div>
         </div>
