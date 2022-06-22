@@ -22,7 +22,7 @@ const Sign = () => {
                     <p>Don't have an account?  <Link to='/create' style={{textDecoration: 'none'}} ><span>Sign Up</span></Link> </p>
                 </header>
                 <section>
-                    <p className="google"> <img src={google} alt="google" />  Continue with google</p>
+                    <p className="google" onClick={handleSubmit}> <img src={google} alt="google" />  Continue with google</p>
                     <div className="or"> <p></p> OR  <p></p></div>
                     <form onSubmit={handleSubmit}>
                         <p>

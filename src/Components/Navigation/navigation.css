@@ -131,3 +131,17 @@ nav button{
     border-bottom: 1px var(--fade) solid;
     box-shadow: 0px 1px 0px rgba(243, 240, 240, 0.5)
 }
+.menu-user{
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem ;
+}
+.menu-user p{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+}
