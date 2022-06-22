@@ -47,6 +47,7 @@ header form span{
 
 header form span input{
   padding:1rem 2rem ;
+  width: 130px;
 }
 
 header form span input::placeholder{
@@ -60,7 +61,7 @@ color: #BABABA;
 header form .search{
   position: absolute;
   left: 10px;
-  bottom: 0 ;
+  bottom: 5px ;
 }
 
 header form button{
