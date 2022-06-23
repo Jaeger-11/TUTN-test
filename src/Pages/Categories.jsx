@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import arrow from '../Assets/Home-Images/arrow-right.png'
 import cate from '../Assets/Home-Images/category.png';
 import search from '../Assets/Home-Images/search.png';
+import Fade from 'react-reveal/Fade';
 
 
 const Categories = () => {
@@ -22,6 +23,7 @@ const Categories = () => {
 
     return(
         <div className='categories'>
+            <Fade top>
             <header>
                 <h2>Voting Categories</h2>
                 <form onSubmit={(e) => e.preventDefault()}>
@@ -29,24 +31,29 @@ const Categories = () => {
                 <button>Search</button>
             </form>
             </header>
+            </Fade>
             
             <section className='categories-flex'>
                 {votingCategories.map((category) => {
                     return (
-                    <article onClick={() => handleClick(category)} className='future-article' >
-                        <img src={cate} alt="category" />
-                        <p>{category}</p>
-                        <p className='arrow-right'><img src={arrow} alt="arrow"/></p>
-                    </article>
+                        <Fade bottom >
+                        <article onClick={() => handleClick(category)} className='future-article' >
+                            <img src={cate} alt="category" />
+                            <p>{category}</p>
+                            <p className='arrow-right'><img src={arrow} alt="arrow"/></p>
+                        </article>
+                        </Fade>
                     )
                 })}
                 {votingCategories.map((category) => {
                     return (
-                    <article onClick={() => handleClick(category)} className='future-article' >
-                        <img src={cate} alt="category" />
-                        <p>{category}</p>
-                        <p className='arrow-right'><img src={arrow} alt="arrow"/></p>
-                    </article>
+                        <Fade bottom >
+                        <article onClick={() => handleClick(category)} className='future-article' >
+                            <img src={cate} alt="category" />
+                            <p>{category}</p>
+                            <p className='arrow-right'><img src={arrow} alt="arrow"/></p>
+                        </article>
+                        </Fade>
                     )
                 })}
             </section>

@@ -6,6 +6,7 @@ import { useGlobalContext } from '../Content-Manager/Context';
 import Modal from '../Components/ModalVote';
 import thumbs from '../Assets/Home-Images/thumbsup.png';
 import search from '../Assets/Home-Images/search.png'
+import Fade from 'react-reveal/Fade';
 
 const techies = [
     {
@@ -65,6 +66,7 @@ const Cate = ({name, votes}) => {
     }
 
     return (
+        <Fade left>
         <article className='category-article'>
             <p className='category-image'></p>
             <h5>{name}</h5>
@@ -78,12 +80,13 @@ const Cate = ({name, votes}) => {
                 <button onClick={() => handleVote(name)}>Vote</button>
             </section>
         </article>
+        </Fade>
     ) 
 }
 
 const Category =() => {
     let params = useParams();
-    const { modal } = useGlobalContext();
+    const { modal, totalEnergy, user } = useGlobalContext();
 
     return(
         <div className='category'>
@@ -93,7 +96,7 @@ const Category =() => {
                 <span> <img src={search} alt="search" className='search' style={{bottom: '5px'}} /> <input type="text" name="" id="" placeholder="Nominee's Name, Nominee's Category"/></span>
                 <button>Search</button>
             </form>
-            <p>You have <span>70</span> votes left</p>
+            <p>You have <span>{totalEnergy}</span> votes left</p>
             <Link to='/voting' style={{textDecoration:'none'}} ><p>Increase your voting power Here!</p></Link>
             </header>
             <section className='category-section'>
@@ -101,6 +104,7 @@ const Category =() => {
                     return <Cate {...techie} />
                 })}
             </section>
+           
             {modal && <Modal  
             image={thumbs} 
             title={'Awesome!'}
@@ -108,6 +112,7 @@ const Category =() => {
             button={'Return to voting page'} 
             to={'/categories'}
             />}
+            
         </div>
     )
 }

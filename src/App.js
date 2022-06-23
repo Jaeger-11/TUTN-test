@@ -1,9 +1,9 @@
 import './App.css';
 import Navbar from './Components/Navigation/Navbar';
-import Home from './Components/Homepage/Home';
+import Home from './Pages/Home';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
-import About from './Components/AboutPage/About';
-import Donation from './Components/DonationPage/Donation';
+import About from './Pages/About';
+import Donation from './Pages/Donation';
 import Future from './Pages/Future';
 import Past from './Pages/Past';
 import Categories from './Pages/Categories';
@@ -12,6 +12,11 @@ import Create from './Pages/Create';
 import Sign from './Pages/Sign';
 import Voting from './Pages/Voting';
 import Nominate from './Pages/Nominate';
+
+// THINGS TO DO
+// install react-reveal for animations
+// work on the voting functionality
+
 
 function App() {
   return (

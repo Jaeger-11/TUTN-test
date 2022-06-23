@@ -1,29 +1,32 @@
 import './home.css';
 import { Link, useNavigate } from 'react-router-dom'
+import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
 
 //Import Home Images
-import arrow from '../../Assets/Home-Images/arrow-right.png';
-import speaker from '../../Assets/Home-Images/speaker.svg';
-import target from '../../Assets/Home-Images/target.png';
-import trophy from '../../Assets/Home-Images/trophy.png';
-import dices from '../../Assets/Home-Images/dices.png';
-import group from '../../Assets/Home-Images/group-photo.png';
-import person1 from '../../Assets/Home-Images/person1.png';
-import person2 from '../../Assets/Home-Images/person2.png';
-import person3 from '../../Assets/Home-Images/person3.png';
-import person4 from '../../Assets/Home-Images/person4.png';
-import vectorright from '../../Assets/Home-Images/vectorright.png';
-import vectorleft from '../../Assets/Home-Images/vectorleft.png';
-import ribbon from '../../Assets/Home-Images/ribbon.png';
-import star from '../../Assets/Home-Images/star.png';
-import stars from '../../Assets/Home-Images/3stars.png';
-import footerlogo from '../../Assets/Home-Images/footer-logo.png';
-import search from '../../Assets/Home-Images/search.png';
+import arrow from '../Assets/Home-Images/arrow-right.png';
+import speaker from '../Assets/Home-Images/speaker.svg';
+import target from '../Assets/Home-Images/target.png';
+import trophy from '../Assets/Home-Images/trophy.png';
+import dices from '../Assets/Home-Images/dices.png';
+import group from '../Assets/Home-Images/group-photo.png';
+import person1 from '../Assets/Home-Images/person1.png';
+import person2 from '../Assets/Home-Images/person2.png';
+import person3 from '../Assets/Home-Images/person3.png';
+import person4 from '../Assets/Home-Images/person4.png';
+import vectorright from '../Assets/Home-Images/vectorright.png';
+import vectorleft from '../Assets/Home-Images/vectorleft.png';
+import ribbon from '../Assets/Home-Images/ribbon.png';
+import star from '../Assets/Home-Images/star.png';
+import stars from '../Assets/Home-Images/3stars.png';
+import footerlogo from '../Assets/Home-Images/footer-logo.png';
+import search from '../Assets/Home-Images/search.png';
 
 const Home = () => {
     let navigate = useNavigate();
     return (
         <div className='home'>
+            <Fade top >
             <header style={{margin:'3rem 0'}}>
                 <h1 style={{padding: '0 5px'}}>First Ever Tech Personality Award For Africans in Europe</h1>
                 <form style={{margin:'1rem 0'}} onSubmit={(e) => e.preventDefault()}>
@@ -35,7 +38,9 @@ const Home = () => {
                     <img src={arrow} alt='arrow' style={{width: '24px'}}/> 
                 </div> 
             </header>
+            </Fade>
 
+            <Fade bottom >
             <article className='home-target'>
                 <h2>Our Target</h2>
                 <section className='home-flex'>
@@ -128,8 +133,11 @@ const Home = () => {
                     <p>Exceptional Talent is an individual with less than 5 years experience in Nigeria technology ecosystem. Such individual are well recognized in their field for impacting with their skills.</p>
                 </article>
             </section>
+            </Fade>
 
+            
             <footer>
+                <Slide left>
                 <section className='footer-section-one'>
                     <ul>
                         <li>About</li>
@@ -159,6 +167,7 @@ const Home = () => {
                     <p>Connecting Techies Globally</p>
                     <p>@2022 The Connected Awards- All rights reserved</p>
                 </section>
+                </Slide>
             </footer>
         </div>
     )

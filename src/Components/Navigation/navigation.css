@@ -81,6 +81,7 @@ nav button{
         gap: 1rem;
         align-items: center;
         padding: 0 1rem ;
+        cursor: pointer;
     }
 }
 
@@ -109,8 +110,8 @@ nav button{
 
 /* STYLING OF MENU COMPONENT */
 .menu{
-    position: absolute;
-    top: 80px;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 3;
