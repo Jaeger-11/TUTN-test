@@ -19,6 +19,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    margin-bottom: 3.5rem;
     width: 100%;
 }
 .home-flex div{
@@ -36,7 +37,7 @@
     background-position: left top, right bottom, 10% 90%,  90% 10%;
     background-repeat: no-repeat;
     color: white;
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
     text-align: center;
 }
 .home-target h2{

@@ -90,7 +90,7 @@ const Category =() => {
             <header> 
                 <h2>{params.category}</h2> 
                 <form onSubmit={(e) => e.preventDefault()}>
-                <span> <img src={search} alt="search" className='search' /> <input type="text" name="" id="" placeholder="Nominee's Name, Nominee's Category"/></span>
+                <span> <img src={search} alt="search" className='search' style={{bottom: '5px'}} /> <input type="text" name="" id="" placeholder="Nominee's Name, Nominee's Category"/></span>
                 <button>Search</button>
             </form>
             <p>You have <span>70</span> votes left</p>

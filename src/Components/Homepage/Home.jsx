@@ -25,7 +25,7 @@ const Home = () => {
     return (
         <div className='home'>
             <header style={{margin:'3rem 0'}}>
-                <h1>First Ever Tech Personality Award For Africans in Europe</h1>
+                <h1 style={{padding: '0 5px'}}>First Ever Tech Personality Award For Africans in Europe</h1>
                 <form style={{margin:'1rem 0'}} onSubmit={(e) => e.preventDefault()}>
                     <span> <img src={search} alt="search" className='search' /> <input type="text" name="" id="" placeholder="Nominee's Name"/></span>
                     <button>Search</button>
