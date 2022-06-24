@@ -8,36 +8,44 @@ import thumbs from '../Assets/Home-Images/thumbsup.png';
 import search from '../Assets/Home-Images/search.png'
 import Fade from 'react-reveal/Fade';
 
-const techies = [
+let techies = [
     {
+        id: 0,
         name: 'Adewale Akinola',
         votes: 700,
     },
     {
+        id: 1,
         name: 'Falodun Damilola',
         votes: 767,
     },
     {
+        id: 2,
         name: 'Susan Itodo',
         votes: 530,
     },
     {
+        id: 3,
         name: 'Micheal Jake',
         votes: 478,
     },
     {
+        id: 4,
         name: 'Akpan Promise',
         votes: 234,
     },
     {
+        id: 5,
         name: 'Dorathy James',
         votes: 354,
     },
     {
+        id: 6,
         name: 'Ahmed Bukar',
         votes: 569,
     },
     {
+        id: 7,
         name: 'Chidera Chukwu',
         votes: 123,
     }
@@ -45,7 +53,7 @@ const techies = [
 
 const Cate = ({name, votes}) => {
     const [ vote, setVote ] = useState(1);
-    const { setModal } = useGlobalContext();
+    const { setModal, setTotEnergy, totenergy } = useGlobalContext();
 
     const handleMinus = () => {
         if(vote > 1){
@@ -56,13 +64,22 @@ const Cate = ({name, votes}) => {
     }
 
     const handleVote = (name) => {
-        // techies.filter((techie) => {
-        //     techie.name === name
-        //     return( {...techies, votes: votes + vote  } )
-        // })
+        const data =  techies.map((techie) => {
+            if (techie.name === name){
+                return {...techie, votes: techie.votes + vote}
+            } else {
+                return techie
+            }
+        })
+        techies = data;
         setModal(true);
-        votes = votes + vote
         setVote(1);
+        const Temp = totenergy - vote
+        if(Temp >= 0){
+            return setTotEnergy(Temp)
+        } else {
+            console.log('error')
+        }
     }
 
     return (
@@ -77,7 +94,7 @@ const Cate = ({name, votes}) => {
                     <p>{vote}</p>
                     <img src={plus} alt="plus" onClick={()=>setVote(vote + 1)} className='plus'/>
                 </div>
-                <button onClick={() => handleVote(name)}>Vote</button>
+                <button onClick={() => {handleVote(name)}}>Vote</button>
             </section>
         </article>
         </Fade>
@@ -86,7 +103,7 @@ const Cate = ({name, votes}) => {
 
 const Category =() => {
     let params = useParams();
-    const { modal, totalEnergy, user } = useGlobalContext();
+    const { modal, totenergy, user } = useGlobalContext();
 
     return(
         <div className='category'>
@@ -96,7 +113,7 @@ const Category =() => {
                 <span> <img src={search} alt="search" className='search' style={{bottom: '5px'}} /> <input type="text" name="" id="" placeholder="Nominee's Name, Nominee's Category"/></span>
                 <button>Search</button>
             </form>
-            <p>You have <span>{totalEnergy}</span> votes left</p>
+            <p>You have <span>{totenergy}</span> votes left</p>
             <Link to='/voting' style={{textDecoration:'none'}} ><p>Increase your voting power Here!</p></Link>
             </header>
             <section className='category-section'>

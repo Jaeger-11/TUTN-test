@@ -5,6 +5,8 @@ import rocket from '../Assets/Home-Images/rocket.png';
 
 const Voting = () => {
 
+    const { setTotEnergy, totenergy } = useGlobalContext();
+
     const data = [
         {
             votes: 20,
@@ -30,7 +32,8 @@ const Voting = () => {
 
     const { modal, setModal } = useGlobalContext();
 
-    const handleBuy = () => {
+    const handleBuy = (votes) => {
+        setTotEnergy( totenergy + votes )
         setModal(true)
     }
 
@@ -54,7 +57,7 @@ const Voting = () => {
                             </div>
                             <section>
                             <h2>${cost}</h2>
-                            <button className="voting-btn" onClick={handleBuy} >Buy</button>
+                            <button className="voting-btn" onClick={() => handleBuy(votes)} >Buy</button>
                             </section>
                             
                             {modal && <Modal  
