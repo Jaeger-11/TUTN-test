@@ -8,6 +8,8 @@ const AppProvider = ({children}) => {
     const [totenergy, setTotEnergy] = useState(70);
     const [error, setError] = useState(false);
     const [user, setUser] = useState('');
+    const [ restricted, setRestricted] = useState(false);
+
     
 
     return(
@@ -20,7 +22,9 @@ const AppProvider = ({children}) => {
                 error,
                 setError,
                 user,
-                setUser
+                setUser,
+                restricted,
+                setRestricted,
             }}
         >
             {children}

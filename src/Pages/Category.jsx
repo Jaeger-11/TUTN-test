@@ -51,7 +51,7 @@ let techies = [
     }
 ]
 
-const Cate = ({name, votes, setError, setRestricted}) => {
+const Cate = ({name, votes, setError, setRestricted, setModal}) => {
     const [ vote, setVote] = useState(1);
     const { setTotEnergy, totenergy, user } = useGlobalContext();
 
@@ -76,6 +76,7 @@ const Cate = ({name, votes, setError, setRestricted}) => {
             setVote(1);
             const Temp = totenergy - vote
             if(Temp >= 0){
+                setModal(true)
                 return setTotEnergy(Temp)
             } else {
                 setError(true)
@@ -106,8 +107,7 @@ const Cate = ({name, votes, setError, setRestricted}) => {
 
 const Category =() => {
     let params = useParams();
-    const { modal, totenergy, error, setError } = useGlobalContext();
-    const [ restricted, setRestricted] = useState(false);
+    const { modal, totenergy, error, setError, setModal, restricted, setRestricted } = useGlobalContext();
 
     return(
         <div className='category'>
@@ -122,7 +122,7 @@ const Category =() => {
             </header>
             <section className='category-section'>
                 {techies.map((techie) => {
-                    return <Cate {...techie} setError={setError} setRestricted={setRestricted}/>
+                    return <Cate {...techie} setError={setError} setRestricted={setRestricted} setModal={setModal}/>
                 })}
             </section>
 
@@ -141,6 +141,7 @@ const Category =() => {
             text={"You are not Signed In!!"}
             button={'Sign In'} 
             to={'/sign'}
+            res={true}
             />}
            
             {modal && <Modal  
