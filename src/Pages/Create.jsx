@@ -22,6 +22,12 @@ const Create = () => {
         navigate('/')
     }
 
+    const handleGoogle = (e) => {
+        e.preventDefault();
+        setUser('Anonymous User')
+        navigate('/')
+    }
+
     return(
         <div className='sign-container'>
 
@@ -32,7 +38,7 @@ const Create = () => {
                     <p>Have an account? <Link to='/sign' style={{textDecoration: 'none'}}><span>Log in</span></Link> </p>
                 </header>
                 <section>
-                    <p className='google'> <img src={google} alt="google" /> Continue with google</p>
+                    <p className='google' onClick={handleGoogle}> <img src={google} alt="google" /> Continue with google</p>
                     <div className='or'> <p></p> OR  <p></p></div>
                     <form onSubmit={handleSubmit}>
                         <p>

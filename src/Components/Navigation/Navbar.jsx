@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Menu from './Menu';
 import { useGlobalContext } from '../../Content-Manager/Context';
-import Jello from 'react-reveal/Jello';
 
 //Import Navigation Images
 import hamburger from '../../Assets/Navigation-Images/Hamburger.png';
@@ -43,9 +42,9 @@ const Navbar = () => {
                 user ?   <div className={`${ log && 'nav-out'} nav-user`}>
                     <p> <img src={energy} alt="energy" /> {totenergy} </p>
                     <p onClick={() => setLog(!log)}> <img src={usericon} alt="user" /> {user} <img src={arrowdown} alt="arrow"  /></p>
-                    {log && <Jello> <div className='nav-out-p'>
+                    {log &&  <div className='nav-out-p'>
                         <p onClick={handleOut}> <img src={logout} alt="log"  /> Log Out </p>
-                    </div> </Jello> }
+                    </div>  }
                 </div> :
                 <section className='nav-btns'>
                 <Link to='sign'><button className='login'>Log In</button></Link>
