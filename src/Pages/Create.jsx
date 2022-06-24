@@ -5,7 +5,7 @@ import { useGlobalContext } from '../Content-Manager/Context';
 
 const Create = () => {
     let navigate = useNavigate(); 
-    const { userLogged } = useGlobalContext();
+    const { setUser } = useGlobalContext();
     const [ firstname, setFirstname ] = useState('');
     const [ lastname, setLastname] = useState('');
 
@@ -18,7 +18,7 @@ const Create = () => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        userLogged(` ${firstname} ${lastname} `)
+        setUser(` ${firstname} ${lastname} `)
         navigate('/')
     }
 

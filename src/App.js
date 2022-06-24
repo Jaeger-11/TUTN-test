@@ -13,10 +13,6 @@ import Sign from './Pages/Sign';
 import Voting from './Pages/Voting';
 import Nominate from './Pages/Nominate';
 
-// THINGS TO DO
-// install react-reveal for animations
-// work on the voting functionality
-
 
 function App() {
   return (

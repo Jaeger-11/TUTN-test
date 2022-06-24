@@ -4,11 +4,11 @@ import { useGlobalContext } from '../Content-Manager/Context';
 
 const Sign = () => {
     let navigate = useNavigate();
-    const { userLogged } = useGlobalContext();
+    const { setUser } = useGlobalContext();
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        userLogged('Williams Chinedu')
+        setUser('Anonymous User')
         navigate('/')
     }
 

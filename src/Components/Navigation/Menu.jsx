@@ -9,7 +9,7 @@ import logo from '../../Assets/Navigation-Images/logo.png';
 import Fade  from 'react-reveal/Fade';
 
 const Menu = ({setMenu, log, setLog}) => {
-    const { user, totalEnergy, userOut } = useGlobalContext()
+    const { user, totenergy, setUser } = useGlobalContext()
 
     return(
         <aside className='menu'>
@@ -20,7 +20,7 @@ const Menu = ({setMenu, log, setLog}) => {
             <ul className='menu-ul'>
                 
             {user && <div className='menu-user'>
-                        <p> <img src={energy} alt="energy" /> {totalEnergy} </p>
+                        <p> <img src={energy} alt="energy" /> {totenergy} </p>
                         <p onClick={() => setLog(!log)}> <img src={usericon} alt="user" /> {user} <img src={arrowdown} alt="arrow"  /></p> </div>}
                 <Link to='/categories' className='menu-link' onClick={() => setMenu(false)}><li>  <Fade left>Categories</Fade> </li></Link>
                 <Link to='/past' className='menu-link' onClick={() => setMenu(false)}><li> <Fade left> Past editions</Fade></li></Link>
@@ -29,7 +29,7 @@ const Menu = ({setMenu, log, setLog}) => {
                 <Link to='/donate' className='menu-link' onClick={() => setMenu(false)}><li><Fade left>Make a donation</Fade></li></Link>
                 { !user ? <> <Link to='/sign' className='menu-link'><li onClick={() => setMenu(false)}><Fade left>Log In</Fade></li></Link>
                 <Link to='/create' className='menu-link'><li onClick={() => setMenu(false)}><Fade left>Create Account</Fade></li></Link> </> :
-                <li onClick={userOut} style={{backgroundColor: '#3E0563', color:'white', display:'flex', alignItems:'center', gap:'1rem'}}><Fade left> <img src={logout} alt="log"  /> Log Out </Fade></li>
+                <li onClick={() => setUser('')} style={{backgroundColor: '#3E0563', color:'white', display:'flex', alignItems:'center', gap:'1rem'}}><Fade left> <img src={logout} alt="log"  /> Log Out </Fade></li>
                 }
                 
             </ul>

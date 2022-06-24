@@ -3,19 +3,21 @@ import { useNavigate } from  'react-router-dom';
 import { useGlobalContext } from '../Content-Manager/Context';
 import Swing from 'react-reveal/Swing'
 
-const Modal = ({image, title, text, button, to}) => {
+const Modal = ({image, title, text, button, to, err}) => {
     let navigate = useNavigate();
-    const { setModal } = useGlobalContext();
+    const { setModal, setError } = useGlobalContext();
     const handleClick = () => {
         navigate(to);
-        setModal(false)
+        if (err) {
+            setError(false)
+        } else setModal(false)
     }
 
     return(
         <div className='modal-container'>
             <Swing>
             <section className='modal'>
-                <p className='times' ><img src={times} alt="" onClick={() => setModal(false)} /></p>
+                <p className='times' ><img src={times} alt="" onClick={() => {err ? setError(false) : setModal(false)}} /></p>
                 <p><img src={image} alt="icon" /></p>
                 <h3 className='title'>{title}</h3>
                 <p style={{color: '#0C0114'}} >{text}</p>

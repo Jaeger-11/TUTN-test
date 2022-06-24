@@ -51,9 +51,9 @@ let techies = [
     }
 ]
 
-const Cate = ({name, votes}) => {
-    const [ vote, setVote ] = useState(1);
-    const { setModal, setTotEnergy, totenergy } = useGlobalContext();
+const Cate = ({name, votes, setError, setRestricted}) => {
+    const [ vote, setVote] = useState(1);
+    const { setTotEnergy, totenergy, user } = useGlobalContext();
 
     const handleMinus = () => {
         if(vote > 1){
@@ -64,21 +64,24 @@ const Cate = ({name, votes}) => {
     }
 
     const handleVote = (name) => {
-        const data =  techies.map((techie) => {
-            if (techie.name === name){
-                return {...techie, votes: techie.votes + vote}
+        if (user){
+            const data =  techies.map((techie) => {
+                if (techie.name === name){
+                    return {...techie, votes: techie.votes + vote}
+                } else {
+                    return techie
+                }
+            })
+            techies = data;
+            setVote(1);
+            const Temp = totenergy - vote
+            if(Temp >= 0){
+                return setTotEnergy(Temp)
             } else {
-                return techie
+                setError(true)
             }
-        })
-        techies = data;
-        setModal(true);
-        setVote(1);
-        const Temp = totenergy - vote
-        if(Temp >= 0){
-            return setTotEnergy(Temp)
         } else {
-            console.log('error')
+            setRestricted(true)
         }
     }
 
@@ -103,7 +106,8 @@ const Cate = ({name, votes}) => {
 
 const Category =() => {
     let params = useParams();
-    const { modal, totenergy, user } = useGlobalContext();
+    const { modal, totenergy, error, setError } = useGlobalContext();
+    const [ restricted, setRestricted] = useState(false);
 
     return(
         <div className='category'>
@@ -118,9 +122,26 @@ const Category =() => {
             </header>
             <section className='category-section'>
                 {techies.map((techie) => {
-                    return <Cate {...techie} />
+                    return <Cate {...techie} setError={setError} setRestricted={setRestricted}/>
                 })}
             </section>
+
+            {error && <Modal  
+            image={thumbs} 
+            title={'Error!'}
+            text={"You don't have enough vote!!"}
+            button={'Increase Your Voting Power'} 
+            to={'/voting'}
+            err={true}
+            />}
+
+            { restricted && <Modal  
+            image={thumbs} 
+            title={'Restricted!'}
+            text={"You are not Signed In!!"}
+            button={'Sign In'} 
+            to={'/sign'}
+            />}
            
             {modal && <Modal  
             image={thumbs} 
@@ -129,6 +150,8 @@ const Category =() => {
             button={'Return to voting page'} 
             to={'/categories'}
             />}
+
+
             
         </div>
     )

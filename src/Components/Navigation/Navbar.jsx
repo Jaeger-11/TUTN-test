@@ -15,7 +15,7 @@ import logout from '../../Assets/Navigation-Images/logout.png';
 
 
 const Navbar = () => {
-    const { user, totalEnergy, userOut } = useGlobalContext();
+    const { user, totenergy, setUser } = useGlobalContext();
     const [menu, setMenu] = useState(false);
     const [log, setLog] = useState(false);
     
@@ -25,7 +25,7 @@ const Navbar = () => {
 
     const handleOut =()=>{
         setLog(false)
-        userOut()
+        setUser('')
     }
 
     return(
@@ -41,7 +41,7 @@ const Navbar = () => {
             </section>
             {
                 user ?   <div className={`${ log && 'nav-out'} nav-user`}>
-                    <p> <img src={energy} alt="energy" /> {totalEnergy} </p>
+                    <p> <img src={energy} alt="energy" /> {totenergy} </p>
                     <p onClick={() => setLog(!log)}> <img src={usericon} alt="user" /> {user} <img src={arrowdown} alt="arrow"  /></p>
                     {log && <Jello> <div className='nav-out-p'>
                         <p onClick={handleOut}> <img src={logout} alt="log"  /> Log Out </p>
